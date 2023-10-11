@@ -54,7 +54,7 @@ const listTopCars = topCars.map((t, index) =>{
 
 const StyledList = styled.div`
   width: 1200px;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   background-color: #424242;
   text-align: center;

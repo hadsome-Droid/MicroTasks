@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
 import {ListStudents} from "./components/liststudents/ListStudents";
+import {Button} from "./components/button/Button";
+import {Container} from "./components/Container";
+
 
 function App() {
     const [students, setStudents] = useState([
@@ -18,7 +21,13 @@ function App() {
         ]
     )
     return (
-        <ListStudents students={students}/>
+        <>
+            <Container>
+                <ListStudents students={students}/>
+                <Button />
+            </Container>
+
+        </>
     );
 }
 
