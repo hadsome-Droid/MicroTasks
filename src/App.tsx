@@ -3,6 +3,7 @@ import './App.css';
 import {ListStudents} from "./components/liststudents/ListStudents";
 import {Button} from "./components/button/Button";
 import {Container} from "./components/Container";
+import {UniversalButton} from "./components/universalbutton/UniversalButton";
 
 
 function App() {
@@ -20,11 +21,27 @@ function App() {
             {id: 11, name: "Christopher", age: 100},
         ]
     )
+
+    const ButtonPush = (userName: string, age: number) => {
+        console.log(`You push me ${userName}! Your age ${age}!`)
+    }
+
+    const ButtonTouch = (userName: string, age: number) => {
+        console.log(`You touch me ${userName}! Your age ${age}!`)
+    }
+
+    const StupidButton = () => {
+        console.log('Im stupid button')
+    }
+
     return (
         <>
             <Container>
                 <ListStudents students={students}/>
-                <Button />
+                {/*<Button />*/}
+                <UniversalButton name={'Push Me!'} callBack={() => ButtonPush('Leo', 21)}/>
+                <UniversalButton name={'Touch Me Please!'} callBack={() => ButtonTouch('Mary', 15)}/>
+                <UniversalButton name={'Dont Push and Touch Me!'} callBack={StupidButton}/>
             </Container>
 
         </>
