@@ -5,6 +5,7 @@ import {Button} from "./components/button/Button";
 import {Container} from "./components/Container";
 import {UniversalButton} from "./components/universalbutton/UniversalButton";
 import {PracticeUseState} from "./components/practiceusestate/PracticeUseState";
+import {ScopeMoney} from "./components/scopemoney/ScoupeMoney";
 
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
                 <UniversalButton name={'Dont Push and Touch Me!'} callBack={StupidButton}/>
             </Container>
             <PracticeUseState/>
-
+            <ScopeMoney/>
         </>
     );
 }
