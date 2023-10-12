@@ -4,6 +4,7 @@ import {ListStudents} from "./components/liststudents/ListStudents";
 import {Button} from "./components/button/Button";
 import {Container} from "./components/Container";
 import {UniversalButton} from "./components/universalbutton/UniversalButton";
+import {PracticeUseState} from "./components/practiceusestate/PracticeUseState";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
                 <UniversalButton name={'Touch Me Please!'} callBack={() => ButtonTouch('Mary', 15)}/>
                 <UniversalButton name={'Dont Push and Touch Me!'} callBack={StupidButton}/>
             </Container>
+            <PracticeUseState/>
 
         </>
     );
