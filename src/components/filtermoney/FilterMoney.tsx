@@ -18,7 +18,7 @@ type SelectedMoneyType = {
 
 export const FilterMoney = (props: FilterMoneyPropsType) => {
 
-    const onFilterAll = () => {
+   function onFilterAll ()  {
         props.onFilterMoneyAll()
     }
 
