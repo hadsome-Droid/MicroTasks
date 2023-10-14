@@ -22,7 +22,7 @@ export const FilterMoney = (props: FilterMoneyPropsType) => {
         props.onFilterMoneyAll()
     }
 
-    const onFilterRuble = () => {
+    function onFilterRuble () {
         props.onFilterMoneyRuble()
     }
 
