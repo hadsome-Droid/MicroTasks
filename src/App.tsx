@@ -24,26 +24,36 @@ function App() {
         ]
     )
 
+    const [filterStudent, setFilterStudent] = useState('all')
+
+    let currentStudent = students
+
+    if(filterStudent === 'robert') {
+        console.log(currentStudent = students.filter((elm)=> elm.name === 'Robert'))
+    }
+
     const ButtonPush = (userName: string, age: number) => {
         console.log(`You push me ${userName}! Your age ${age}!`)
+        setFilterStudent(userName)
     }
 
     const ButtonTouch = (userName: string, age: number) => {
         console.log(`You touch me ${userName}! Your age ${age}!`)
     }
 
-    const StupidButton = () => {
+    const StupidButton = (userName: string) => {
         console.log('Im stupid button')
+        setFilterStudent(userName)
     }
 
     return (
         <>
             <Container>
-                <ListStudents students={students}/>
+                <ListStudents students={currentStudent}/>
                 {/*<Button />*/}
-                <UniversalButton name={'Push Me!'} callBack={() => ButtonPush('Leo', 21)}/>
+                <UniversalButton name={'Push Me!'} callBack={() => ButtonPush('robert', 21)}/>
                 <UniversalButton name={'Touch Me Please!'} callBack={() => ButtonTouch('Mary', 15)}/>
-                <UniversalButton name={'Dont Push and Touch Me!'} callBack={StupidButton}/>
+                <UniversalButton name={'Dont Push and Touch Me!'} callBack={()=>StupidButton('all')}/>
             </Container>
             <PracticeUseState/>
             <ScopeMoney/>
