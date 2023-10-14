@@ -15,14 +15,14 @@ export const UniversalButton = (props: UniversalButtonPropsType) => {
     // Возникает вопрос где же закладывать логику для callBack ?
     // Ответ прост! в том компоненте где наша кнопка используется!
     // debugger
-    const onclickHandler = () => {
+    const onClickHandler = () => {
         props.callBack()
     }
 
     return (
         <div>
             {/*у кнопки есть имя(name)  и обработчик onClick, так же  вся логика выносится перед return*/}
-            <StyledUniversalButton onClick={onclickHandler} color={props.colorButton}>{props.name}</StyledUniversalButton>
+            <StyledUniversalButton onClick={onClickHandler} color={props.colorButton}>{props.name}</StyledUniversalButton>
         </div>
     );
 };

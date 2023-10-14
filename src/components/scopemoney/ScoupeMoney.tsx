@@ -15,24 +15,13 @@ export const ScopeMoney = () => {
         {banknote: 'RUBLS', value: 50, number: ' v1234567890'},
     ])
 
-    let selectedMoney = [...money]
+    let selectedMoney = money.filter((filteredMoney) => filteredMoney.banknote === 'RUBLS')
 
     const onClickHandler = (nameButton: string) => {
-
+        console.log(nameButton)
         if(nameButton === 'ruble'){
-            console.log(nameButton)
-          return setMoney(selectedMoney = [...money].filter((filteredMoney) => filteredMoney.banknote === 'RUBLS'))
-        }
 
-        if(nameButton === 'dollar'){
-            console.log(nameButton)
-         return  setMoney(selectedMoney = [...money].filter((filteredMoney) => filteredMoney.banknote === 'Dollars'))
         }
-        if(nameButton === 'all'){
-            console.log(nameButton)
-         return  setMoney(money)
-        }
-
     }
 
     return (
