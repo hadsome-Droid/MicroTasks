@@ -6,6 +6,9 @@ import {Container} from "./components/Container";
 import {UniversalButton} from "./components/universalbutton/UniversalButton";
 import {PracticeUseState} from "./components/practiceusestate/PracticeUseState";
 import {ScopeMoney} from "./components/scopemoney/ScoupeMoney";
+import {Chat} from "./components/chat/Chat";
+
+
 
 
 function App() {
@@ -49,11 +52,12 @@ function App() {
     return (
         <>
             <Container>
-                <ListStudents students={currentStudent}/>
+                <Chat/>
+                {/*<ListStudents students={currentStudent}/>*/}
                 {/*<Button />*/}
-                <UniversalButton name={'Push Me!'} callBack={() => ButtonPush('robert', 21)}/>
-                <UniversalButton name={'Touch Me Please!'} callBack={() => ButtonTouch('Mary', 15)}/>
-                <UniversalButton name={'Dont Push and Touch Me!'} callBack={()=>StupidButton('all')}/>
+                {/*<UniversalButton name={'Push Me!'} callBack={() => ButtonPush('robert', 21)}/>*/}
+                {/*<UniversalButton name={'Touch Me Please!'} callBack={() => ButtonTouch('Mary', 15)}/>*/}
+                {/*<UniversalButton name={'Dont Push and Touch Me!'} callBack={()=>StupidButton('all')}/>*/}
             </Container>
             <PracticeUseState/>
             <ScopeMoney/>
