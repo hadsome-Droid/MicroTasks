@@ -5,10 +5,6 @@ export type UniversalInputPropsType = {
     addMessage: (title: string) => void
 }
 
-// export type MessagesPropsType = {
-//     messages: MessageType[]
-// }
-
 
 export const UniversalInput = (props: UniversalInputPropsType) => {
     let [title, setTitle] = useState('')
@@ -21,10 +17,11 @@ export const UniversalInput = (props: UniversalInputPropsType) => {
 
     const onClickButtonHandler = () => {
         props.addMessage(title)
+        setTitle('')
     }
     return (
         <div>
-            <input type="text" onChange={onChangeInputHandler}/>
+            <input value={title} onChange={onChangeInputHandler}/>
             <button onClick={onClickButtonHandler}>+</button>
         </div>
     );

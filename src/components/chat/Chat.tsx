@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {UniversalInput} from "../universalInput/UniversalInput";
 import styled from "styled-components";
+import {Input} from "../universalInput/Input";
+import {Button} from "../button/Button";
 
 
 export const Chat = () => {
@@ -13,19 +15,24 @@ export const Chat = () => {
 
     let [messages, setMessage] = useState(server)
 
+    let [title, setTitle] = useState('')
+    console.log(title)
+
     const addMessage = (title: string) => {
         console.log(title)
-        let newMessage = {message: 'DRFE'}
-        setMessage([...server, newMessage])
+        let newMessage = {message: title}
+        setMessage([ newMessage,...messages])
     }
 
     return (
         <div>
-            <UniversalInput addMessage={addMessage}/>
+            {/*<UniversalInput addMessage={addMessage}/>*/}
+            <Input setTitle={setTitle} title={title}/>
+            <Button name={'Добавить'} callBack={addMessage}/>
             <MessageBox>
                 {messages.map((el, index) => {
                     return (
-                        <span>{el.message}</span>
+                        <span key={index}>{el.message}</span>
                     )
                 })}
             </MessageBox>

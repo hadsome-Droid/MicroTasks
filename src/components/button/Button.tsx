@@ -1,6 +1,12 @@
 import React from 'react';
 
-export const Button = () => {
+type ButtonPropsType = {
+    name:string
+    callBack: ()=>void
+}
+
+
+export const Button = (props:ButtonPropsType) => {
 
     // const setHey = (event:MouseEvent<HTMLButtonElement>) =>{
     //     console.log('Hey NOOB!')
@@ -10,8 +16,9 @@ export const Button = () => {
     //     console.log('Ты нажал туды!')
     // }
 
-const onClickHandler = (name:string) => {
-    console.log(name)
+const onClickButtonHandler = () => {
+    // console.log(name)
+    props.callBack()
 }
 
 const onClickShow = () =>{
@@ -24,12 +31,13 @@ const onShowNumber = (num:number)=>{
 
     return (
         <>
+            <button onClick={onClickButtonHandler}>{props.name}</button>
             {/*<button onClick={()=>onClickHandler('rydi')}>*/}
             {/*    Push Me!*/}
             {/*</button>*/}
             {/*<button onClick={(event)=>onClickHandler('bob')}>Жми Сюды!</button>*/}
-            <button onClick={onClickShow}>1</button>
-            <button onClick={()=>onShowNumber(200100)}>2</button>
+            {/*<button onClick={onClickShow}>1</button>*/}
+            {/*<button onClick={()=>onShowNumber(200100)}>2</button>*/}
         </>
 
     );
