@@ -24,11 +24,16 @@ export const Chat = () => {
         setMessage([ newMessage,...messages])
     }
 
+    function callBackButtonHandler () {
+        addMessage(title)
+        setTitle('')
+    }
+
     return (
         <div>
             {/*<UniversalInput addMessage={addMessage}/>*/}
             <Input setTitle={setTitle} title={title}/>
-            <Button name={'Добавить'} callBack={addMessage}/>
+            <Button name={'Добавить'} callBack={callBackButtonHandler}/>
             <MessageBox>
                 {messages.map((el, index) => {
                     return (
